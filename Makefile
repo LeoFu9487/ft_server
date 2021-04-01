@@ -12,6 +12,9 @@ run :
 off :
 	@sudo docker run --env AUTOINDEX=off --name $(containername) -d -p 443:443 -p 80:80 $(imagename)
 
+ip :
+	@sudo docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(containername)
+
 stay :
 	@sudo docker run  -it $(imagename) sh
 
