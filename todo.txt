@@ -2,4 +2,5 @@
 2. configuration file
 3. cp -a
 4. default : location part
-5. check correction
+5. autoindex
+6. check correction

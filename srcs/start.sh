@@ -4,10 +4,13 @@ openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out /etc/nginx/ssl/
 
 
 #nginx
-mv ./default etc/nginx/sites-available/
+#autoindex
+if [[ $(printenv AUTOINDEX) = "off" ]]; then
+    mv ./autoindex_off etc/nginx/sites-available/default
+else
+    mv ./default etc/nginx/sites-available/
+fi
 rm -rf var/www/*
-#chown -R www-data var/www/*
-#chmod -R 755 /var/www/*
 
 #mysql
 service mysql start
