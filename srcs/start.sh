@@ -5,9 +5,9 @@ openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out /etc/nginx/ssl/
 
 #nginx
 mv ./default etc/nginx/sites-available/
-#ln -s etc/nginx/sites-available/default etc/nginx/sites-enabled
-chown -R www-data var/www/*
-chmod -R 755 /var/www/*
+rm -rf var/www/*
+#chown -R www-data var/www/*
+#chmod -R 755 /var/www/*
 
 #mysql
 service mysql start

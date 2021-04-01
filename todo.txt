@@ -1,3 +1,5 @@
 1. SQL : grant
 2. configuration file
 3. cp -a
+4. default : location part
+5. check correction
